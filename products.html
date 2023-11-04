@@ -50,6 +50,7 @@
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/agrion.css" />
     <link rel="stylesheet" href="assets/css/agrion-responsive.css" />
+    <link rel="stylesheet" href="assets/css/product.css">
 </head>
 
 <body class="custom-cursor">
@@ -203,7 +204,86 @@
         <!--Page Header End-->
 
         <!--Product Start-->
-       
+       <section class="product">
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('land1')"> Land1</button>
+  <button class="btn" onclick="filterSelection('land2')"> Land2</button>
+  <button class="btn" onclick="filterSelection('land3')"> Land3</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column land1">
+    <div class="content">
+      <img src="/w3images/mountains.jpg" alt="land1" style="width:100%">
+      <h4>Mountains</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column land1">
+    <div class="content">
+      <img src="/w3images/lights.jpg" alt="land1" style="width:100%">
+      <h4>Lights</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column land1">
+    <div class="content">
+      <img src="/w3images/nature.jpg" alt="land1" style="width:100%">
+      <h4>Forest</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column land2">
+    <div class="content">
+      <img src="/w3images/cars1.jpg" alt="land2" style="width:100%">
+      <h4>Retro</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column land2">
+    <div class="content">
+      <img src="/w3images/cars2.jpg" alt="land2" style="width:100%">
+      <h4>Fast</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column land2">
+    <div class="content">
+      <img src="/w3images/cars3.jpg" alt="land2" style="width:100%">
+      <h4>Classic</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column land3">
+    <div class="content">
+      <img src="/w3images/land31.jpg" alt="land3" style="width:100%">
+      <h4>Girl</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column land3">
+    <div class="content">
+      <img src="/w3images/land32.jpg" alt="land3" style="width:100%">
+      <h4>Man</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column land3">
+    <div class="content">
+      <img src="/w3images/land33.jpg" alt="land3" style="width:100%">
+      <h4>Woman</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+</div>
+
+       </section>
         <!--Product End-->
 
         <!--Site Footer Start-->
@@ -434,6 +514,7 @@
 
     <!-- template js -->
     <script src="assets/js/agrion.js"></script>
+    <script src="product.js"></script>
 </body>
 
 
