@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <style>/* CSS for the first page (Card Information Form) */
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        #imagePreview {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #previewImage {
+            max-width: 100%;
+            max-height: 200px;
+        }
+
+        select,
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #dropArea {
+            border: 2px dashed #007BFF;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        } </style>
+</head><!DOCTYPE html>
+<html>
+<head>
+    <title>Add Card Information</title>
+</head>
+<body>
+    <h1>Add Card Information</h1>
+    <form id="cardForm">
+        <div>
+            <label for="landImage">Land Image:</label>
+            <form id="cardForm">
+                <div id="dropArea">
+                    <label for="landImage">Drag & Drop or Click to Upload Land Image:</label>
+                    <input type="file" id="landImageInput" accept="image/*" required>
+                    <img id="previewImage" src="" alt="Image Preview">
+                </div>
+        
+            </div>
+        <label for="size">Size in Acre:</label>
+        <input type="text" id="size" required><br>
+
+        <label for="price">Price for Lease / Month:</label>
+        <input type="text" id="price" required><br>
+
+        <label for="ownerName">Owner Name:</label>
+        <input type="text" id="ownerName" required><br>
+
+        <label for="locationDistrict">Location District:</label>
+        <input type="text" id="locationDistrict" required><br>
+
+        <label for="locationAddress">Location Address:</label>
+        <input type="text" id="locationAddress" required><br>
+
+        <label for="soilType">Soil Type:</label>
+        <select id="soilType" required>
+            <option value="paddy">Paddy</option>
+            <option value="cotton">Cotton</option>
+            <option value="vegetable">Vegetable</option>
+            <option value="maize">Maize</option>
+            <option value="grains">Grains</option>
+        </select><br>
+
+        <label for="contactNumber">Contact Number (href):</label>
+        <input type="text" id="contactNumber" required><br>
+
+        <button type="submit" id="submitCard">Submit</button>
+    </form>
+
+    <script>
+        const cardForm = document.getElementById("cardForm");
+        const landImageInput = document.getElementById("landImageInput");
+        const previewImage = document.getElementById("previewImage");
+
+        cardForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Get form data
+            const cardData = {
+                landImage: previewImage.src, // Use the preview image as the source
+                size: document.getElementById("size").value,
+                price: document.getElementById("price").value,
+                ownerName: document.getElementById("ownerName").value,
+                locationDistrict: document.getElementById("locationDistrict").value,
+                locationAddress: document.getElementById("locationAddress").value,
+                soilType: document.getElementById("soilType").value,
+                contactNumber: document.getElementById("contactNumber").value,
+            };
+
+            // Retrieve existing data from localStorage
+            const existingData = JSON.parse(localStorage.getItem("cards")) || [];
+
+            // Add the new card data
+            existingData.push(cardData);
+
+            // Update localStorage with the new data
+            localStorage.setItem("cards", JSON.stringify(existingData));
+
+            // Redirect to the display_cards.html page
+            window.location.href = "display_cards.html";
+        });
+
+        landImageInput.addEventListener("change", function () {
+            const file = landImageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    previewImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
