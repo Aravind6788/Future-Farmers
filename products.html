@@ -90,7 +90,9 @@
             border-radius: 3px;
             font-size: 16px;
         }
-        
+        .submit{
+            margin-left: 40%;
+        }
         select {
             appearance: none;
             -webkit-appearance: none;
@@ -259,16 +261,17 @@
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="index.html">Home</a></li>
                         <li><span>/</span></li>
-                        <li>Shop</li>
+                        <li>Add Land</li>
                     </ul>
                     <h2>Our Products</h2>
                 </div>
             </div>
         </section>
         <!--Page Header End-->
-        <h1>Add Land Information</h1>
+        
 
         <form id="landForm">
+            <h1>Add Land Information</h1>
             <label for="imageInput">Upload Land Image:</label>
             <input type="file" id="imageInput" accept="image/*" required><br>
     
@@ -286,7 +289,7 @@
     
             <label for="addressInput">Address:</label>
             <input type="text" id="addressInput" required><br>
-            <label for="landTypeInput">Land type:</label>
+            <label for="landTypeInput">Land type:</label><br>
             <select id="landTypeInput">
                 <option value="all">All</option>
                 <option value="Paddy">Paddy</option>
@@ -295,9 +298,9 @@
                 <option value="Cotton">Cotton</option>
                 <option value="Vegitables">Vegitables</option>
                 <!-- Add more districts as needed -->
-            </select><br>
+            </select><br><br>
     
-            <label for="districtInput">District:</label>
+            <label for="districtInput">District:</label><br>
             <select id="districtInput">
                 <option value="all">All Districts of Tamil Nadu</option>
                 <option value="Coimbatore">Coimbatore</option>
@@ -306,9 +309,9 @@
                 <option value="Thanjavur">Thanjavur</option>
                 <option value="Mailadudhurai">Mailadudhurai</option>
                 <!-- Add more districts as needed -->
-            </select><br>
+            </select><br><br>
     
-            <input type="submit" value="Submit">
+            <input type="submit"class="submit" value="Submit">
         </form>
     
         <!--Product End-->
