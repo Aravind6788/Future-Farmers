@@ -44,7 +44,101 @@
     <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
     <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" />
     <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
-
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+    }
+    
+    #landCards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .card {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        margin: 10px;
+        width: 300px;
+        text-align: center;
+    }
+    
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .card p {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+    /* CSS for Land Information Cards */
+    
+    .card {
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin: 10px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    
+    .card p {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+    .container1{
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;       
+    }
+    .containerin1{
+        display: flex;
+        margin-inline:100px;
+    }
+    .ocontainer{
+        display: flex;
+       
+    }
+    </style>
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/agrion.css" />
     <link rel="stylesheet" href="assets/css/agrion-responsive.css" />
@@ -59,10 +153,7 @@
 
 
 
-    <div class="preloader">
-        <div class="preloader__image"></div>
-    </div>
-    <!-- /.preloader -->
+    <!-- /.preloader --> 
 
 
     <div class="page-wrapper">
@@ -181,230 +272,33 @@
             </div>
         </section>
         <!--Page Header End-->
-
-        <!--Product Details Start-->
-        <section class="product-details">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-xl-6">
-                        <div class="product-details__img">
-                            <img src="assets/images/shop/product-details-img-1.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-6">
-                        <div class="product-details__top">
-                            <h3 class="product-details__title">Brown Bread <span>$23.00</span> </h3>
-                        </div>
-                        <div class="product-details__reveiw">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <span>2 Customer Reviews</span>
-                        </div>
-                        <div class="product-details__content">
-                            <p class="product-details__content-text1">Aliquam hendrerit a augue insuscipit. Etiam
-                                aliquam massa quis des mauris commodo venenatis ligula commodo leez sed blandit
-                                convallis dignissim onec vel pellentesque neque.</p>
-                            <p class="product-details__content-text2">REF. 4231/406 <br>
-                                Available in store</p>
-                        </div>
-
-                        <div class="product-details__quantity">
-                            <h3 class="product-details__quantity-title">Choose Quantity</h3>
-                            <div class="quantity-box">
-                                <button type="button" class="sub"><i class="fa fa-minus"></i></button>
-                                <input type="number" id="1" value="1" />
-                                <button type="button" class="add"><i class="fa fa-plus"></i></button>
-                            </div>
-                        </div>
-
-
-                        <div class="product-details__buttons">
-                            <div class="product-details__buttons-1">
-                                <a href="cart.html" class="thm-btn">Add to Cart <i class="icon-right-arrow"></i></a>
-                            </div>
-                            <div class="product-details__buttons-2">
-                                <a href="product-details.html" class="thm-btn">Add to Wislist <i
-                                        class="icon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-details__social">
-                            <div class="title">
-                                <h3>Share with Friends</h3>
-                            </div>
-                            <div class="product-details__social-link">
-                                <a href="#"><span class="fab fa-twitter"></span></a>
-                                <a href="#"><span class="fab fa-facebook"></span></a>
-                                <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                <a href="#"><span class="fab fa-instagram"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Product Details End-->
-
-        <!--Product Description Start-->
-        <section class="product-description">
-            <div class="container">
-                <h3 class="product-description__title">Description</h3>
-                <p class="product-description__text1">Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci
-                    phaedrum. There are many variations of passages of Lorem Ipsum available, but the majority have
-                    alteration in some injected or words which don't look even slightly believable. If you are going to
-                    use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrang hidden in the
-                    middle of text.</p>
-                <div class="product-description__list">
-                    <ul class="list-unstyled">
-                        <li>
-                            <p><span class="icon-right-arrow"></span> Nam at elit nec neque suscipit gravida.</p>
-                        </li>
-                        <li>
-                            <p><span class="icon-right-arrow"></span> Aenean egestas orci eu maximus tincidunt.</p>
-                        </li>
-                        <li>
-                            <p><span class="icon-right-arrow"></span> Curabitur vel turpis id tellus cursus laoreet.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <p class="product-description__tex2">All the Lorem Ipsum generators on the Internet tend to repeat
-                    predefined chunks as necessary, making this the first true generator on the Internet. It uses a
-                    dictionary of over 200 Latin words, combined with a handful of model sentence structures, to
-                    generate Lorem Ipsum which looks reasonable. </p>
-            </div>
-        </section>
-        <!--Product Description End-->
-
-        <!--Review One Start-->
-        <section class="review-one">
-            <div class="container">
-                <div class="comments-area">
-                    <div class="review-one__title">
-                        <h3>2 Reviews</h3>
-                    </div>
-                    <!--Start Comment Box-->
-                    <div class="comment-box">
-                        <div class="comment">
-                            <div class="author-thumb">
-                                <figure class="thumb"><img src="assets/images/shop/review-1-1.jpg" alt="">
-                                </figure>
-                            </div>
-
-                            <div class="review-one__content">
-                                <div class="review-one__content-top">
-                                    <div class="info">
-                                        <h2>Kevin Martin <span>20 July, 2022 . 4:00 pm</span></h2>
-                                    </div>
-                                    <div class="reply-btn">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-
-                                <div class="review-one__content-bottom">
-                                    <p>It has survived not only five centuries, but also the leap into electronic
-                                        typesetting unchanged. It was popularised in the sheets containing lorem ipsum
-                                        is simply free text. Class aptent taciti sociosqu ad litora torquent per conubia
-                                        nostra, per inceptos himenaeos. Vestibulum sollicitudin varius mauris non
-                                        dignissim.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Comment Box-->
-
-                    <!--Start Comment Box-->
-                    <div class="comment-box">
-                        <div class="comment">
-                            <div class="author-thumb">
-                                <figure class="thumb"><img src="assets/images/shop/review-1-2.jpg" alt="">
-                                </figure>
-                            </div>
-
-                            <div class="review-one__content">
-                                <div class="review-one__content-top">
-                                    <div class="info">
-                                        <h2>Sarah Albert <span>20 July, 2022 . 4:00 pm</span></h2>
-                                    </div>
-                                    <div class="reply-btn">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-
-                                <div class="review-one__content-bottom">
-                                    <p>It has survived not only five centuries, but also the leap into electronic
-                                        typesetting unchanged. It was popularised in the sheets containing lorem ipsum
-                                        is simply free text. Class aptent taciti sociosqu ad litora torquent per conubia
-                                        nostra, per inceptos himenaeos. Vestibulum sollicitudin varius mauris non
-                                        dignissim.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Comment Box-->
-                </div>
-            </div>
-        </section>
-        <!--Review One End-->
-
-        <!--Start Review Form-->
-        <section class="review-form-one">
-            <div class="container">
-                <div class="review-form-one__inner">
-                    <h3 class="review-form-one__title">Add a Review</h3>
-                    <div class="review-form-one__rate-box">
-                        <p class="review-form-one__rate-text">Rate this Product?</p>
-                        <div class="review-form-one__rate">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <form action="https://layerdrops.com/agrionhtml/main-html/assets/inc/sendemail.php" class="review-form-one__form contact-form-validated"
-                        novalidate="novalidate">
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="review-form-one__input-box text-message-box">
-                                    <textarea name="message" placeholder="Write a Comment"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="review-form-one__input-box">
-                                    <input type="text" placeholder="Your Name" name="name">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="review-form-one__input-box">
-                                    <input type="email" placeholder="Email Address" name="email">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <button type="submit" class="thm-btn review-form-one__btn">Submit a Review <i
-                                        class="icon-right-arrow"></i></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <!--End Review Form-->
-
+        <div class="container1">
+        <h1>Land Information Cards</h1>
+        <div class="ocontainer">
+        <div class="containerin1">
+    <label for="districtFilter">Filter by District:</label>
+    <select id="districtFilter">
+        <option value="all">All Districts of Tamil Nadu</option>
+        <option value="all">All Districts of Tamil Nadu</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="chennai">Chennai</option>
+            <option value="district2">Theni</option>
+            <option value="Thanjavur">Thanjavur</option>
+            <option value="Mailadudhurai">Mailadudhurai</option>
+        <!-- Add more districts as needed -->
+    </select>
+    </div>
+    <div class="containerin1">
+    <label for="landTypeFilter">Filter by Land Type:</label>
+    <select id="landTypeFilter">
+        <!-- Populate with land types from local storage data -->
+    </select>
+</div>
+</div>
+    <div id="landCards">
+        <!-- Display land information cards here based on filters -->
+    </div>
+</div>  
         <!--Site Footer Start-->
         <footer class="site-footer">
             <div class="site-footer__top">
@@ -627,6 +521,128 @@
     <script src="assets/vendors/circleType/jquery.circleType.js"></script>
     <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
     <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script>
+        // Function to delete a specific item from local storage
+        function deleteLandInfo(index) {
+            const landData = JSON.parse(localStorage.getItem('landData')) || [];
+            landData.splice(index, 1); // Remove the item at the specified index
+            localStorage.setItem('landData', JSON.stringify(landData)); // Update local storage
+            displayLandInfo(); // Refresh the displayed cards
+        }
+
+        // Function to create a card for displaying land information
+        function createLandCard(landInfo, index) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            // Create an image element for displaying images
+            const img = document.createElement('img');
+            img.src = landInfo.image; // Set the image source to the data URL
+            img.alt = 'Land Image';
+            img.style.maxWidth = '100%';
+            img.style.height = 'auto';
+
+            // Create a delete button for each card
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.addEventListener('click', function () {
+                deleteLandInfo(index); // Call the deleteLandInfo function to delete the card
+            });
+
+            // Create paragraphs for other land information
+            const size = document.createElement('p');
+            size.textContent = `Size: ${landInfo.size} acres`;
+
+            const price = document.createElement('p');
+            price.textContent = `Lease Price: ${landInfo.price}`;
+
+            const ownerName = document.createElement('p');
+            ownerName.textContent = `Owner Name: ${landInfo.ownerName}`;
+
+            const phoneNumber = document.createElement('p');
+            phoneNumber.textContent = `Phone Number: ${landInfo.phoneNumber}`;
+
+            const address = document.createElement('p');
+            address.textContent = `Address: ${landInfo.address}`;
+
+            const landType = document.createElement('p');
+            landType.textContent = `Land Type: ${landInfo.landType}`;
+
+            const landDistrict = document.createElement('p');
+            landDistrict.textContent = `District: ${landInfo.district}`;
+
+            card.appendChild(img);
+            card.appendChild(size);
+            card.appendChild(price);
+            card.appendChild(ownerName);
+            card.appendChild(phoneNumber);
+            card.appendChild(address);
+            card.appendChild(landType);
+            card.appendChild(landDistrict);
+            card.appendChild(deleteButton); // Append the delete button to the card
+
+            // Append the card to the card container
+            const landCards = document.getElementById('landCards');
+            landCards.appendChild(card);
+        }
+
+        // Retrieve and display land information based on filters
+        function displayLandInfo() {
+            const districtFilter = document.getElementById('districtFilter').value;
+            const landTypeFilter = document.getElementById('landTypeFilter').value;
+            const landCards = document.getElementById('landCards');
+            landCards.innerHTML = '';
+
+            // Retrieve data from local storage
+            const landData = JSON.parse(localStorage.getItem('landData')) || [];
+
+            // Filter and display land information cards
+            landData.forEach(function (landInfo, index) {
+                if ((districtFilter === 'all' || landInfo.district === districtFilter) &&
+                    (landTypeFilter === 'all' || landInfo.landType === landTypeFilter)) {
+                    createLandCard(landInfo, index);
+                }
+            });
+        }
+
+        // Populate the filter options with data from local storage
+        function populateFilterOptions() {
+            const districtFilter = document.getElementById('districtFilter');
+            const landTypeFilter = document.getElementById('landTypeFilter');
+
+            // Retrieve data from local storage
+            const landData = JSON.parse(localStorage.getItem('landData')) || [];
+            const districts = new Set();
+            const landTypes = new Set();
+
+            landData.forEach(function (landInfo) {
+                districts.add(landInfo.district);
+                landTypes.add(landInfo.landType);
+            });
+
+            // Add filter options
+            districtFilter.innerHTML = '<option value="all">All Districts of Tamil Nadu</option>';
+            landTypeFilter.innerHTML = '<option value="all">All Land Types</option>';
+
+            districts.forEach(function (district) {
+                districtFilter.innerHTML += `<option value="${district}">${district}</option>`;
+            });
+
+            landTypes.forEach(function (landType) {
+                landTypeFilter.innerHTML += `<option value="${landType}">${landType}</option>`;
+            });
+        }
+
+        // Initialize filter options and display land information
+        populateFilterOptions();
+        displayLandInfo();
+
+        // Add event listeners for filters
+        document.getElementById('districtFilter').addEventListener('change', displayLandInfo);
+        document.getElementById('landTypeFilter').addEventListener('change', displayLandInfo);
+        //localStorage.clear(); 
+       
+    </script>
 
 
 

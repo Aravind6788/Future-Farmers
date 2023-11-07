@@ -1,166 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>product</title>
-    <style>/* CSS for the first page (Card Information Form) */
-          body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
+    <title>Add Land Information</title>
+    <style>/* CSS for Page 1 (Add Land Information) */
 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
         h1 {
             text-align: center;
         }
-
+        
         form {
             max-width: 600px;
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
-
+        
         label {
             font-weight: bold;
         }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        #imagePreview {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        #previewImage {
-            max-width: 100%;
-            max-height: 200px;
-        }
-
-        select,
-        input[type="text"] {
+        
+        input[type="file"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="text"],
+        textarea,
+        select {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
+            margin: 5px 0;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 3px;
+            font-size: 16px;
         }
-
-        button {
-            display: block;
+        
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='black' width='14' height='14' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><polygon points='0,0 20,0 10,20'/></svg>");
+            background-size: 14px;
+            background-position: 95% 50%;
+            background-repeat: no-repeat;
+        }
+        
+        input[type="submit"] {
             background-color: #007BFF;
             color: #fff;
             border: none;
-            padding: 10px 20px;
-            margin: 10px 0;
             border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
             cursor: pointer;
         }
         
-        #dropArea {
-            border: 2px dashed #007BFF;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        button:hover {
+        input[type="submit"]:hover {
             background-color: #0056b3;
-        } </style>
-</head><!DOCTYPE html>
-<html>
-<head>
-    <title>Add Card Information</title>
+        }
+        </style>
 </head>
 <body>
-    <h1>Add Card Information</h1>
-    <form id="cardForm">
-        <div>
-            <label for="landImage">Land Image:</label>
-            <form id="cardForm">
-                <div id="dropArea">
-                    <label for="landImage">Drag & Drop or Click to Upload Land Image:</label>
-                    <input type="file" id="landImageInput" accept="image/*" required>
-                    <img id="previewImage" src="" alt="Image Preview">
-                </div>
-        
-            </div>
-        <label for="size">Size in Acre:</label>
-        <input type="text" id="size" required><br>
+    <h1>Add Land Information</h1>
 
-        <label for="price">Price for Lease / Month:</label>
-        <input type="text" id="price" required><br>
+    <form id="landForm">
+        <label for="imageInput">Upload Land Image:</label>
+        <input type="file" id="imageInput" accept="image/*" required><br>
 
-        <label for="ownerName">Owner Name:</label>
-        <input type="text" id="ownerName" required><br>
+        <label for="sizeInput">Size (in acres):</label>
+        <input type="number" id="sizeInput" required><br>
 
-        <label for="locationDistrict">Location District:</label>
-        <input type="text" id="locationDistrict" required><br>
+        <label for="priceInput">Lease Price:</label>
+        <input type="number" id="priceInput" required><br>
 
-        <label for="locationAddress">Location Address:</label>
-        <input type="text" id="locationAddress" required><br>
+        <label for="ownerNameInput">Owner Name:</label>
+        <input type="text" id="ownerNameInput" required><br>
 
-        <label for="soilType">Soil Type:</label>
-        <select id="soilType" required>
-            <option value="paddy">Paddy</option>
-            <option value="cotton">Cotton</option>
-            <option value="vegetable">Vegetable</option>
-            <option value="maize">Maize</option>
-            <option value="grains">Grains</option>
+        <label for="phoneNumberInput">Phone Number:</label>
+        <input type="number" id="phoneNumberInput" required><br>
+
+        <label for="addressInput">Address:</label>
+        <input type="text" id="addressInput" required><br>
+        <label for="landTypeInput">Land type:</label>
+        <select id="landTypeInput">
+            <option value="all">All</option>
+            <option value="Paddy">Paddy</option>
+            <option value="Grain">Grain</option>
+            <option value="Maiz">Maiz</option>
+            <option value="Cotton">Cotton</option>
+            <option value="Vegitables">Vegitables</option>
+            <!-- Add more districts as needed -->
         </select><br>
 
-        <label for="contactNumber">Contact Number (href):</label>
-        <input type="text" id="contactNumber" required><br>
+        <label for="districtInput">District:</label>
+        <select id="districtInput">
+            <option value="all">All Districts of Tamil Nadu</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Theni">Theni</option>
+            <option value="Thanjavur">Thanjavur</option>
+            <option value="Mailadudhurai">Mailadudhurai</option>
+            <!-- Add more districts as needed -->
+        </select><br>
 
-        <button type="submit" id="submitCard">Submit</button>
+        <input type="submit" value="Submit">
     </form>
 
     <script>
-        const cardForm = document.getElementById("cardForm");
-        const landImageInput = document.getElementById("landImageInput");
-        const previewImage = document.getElementById("previewImage");
+        // Function to add land information to local storage
+        document.getElementById('landForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-        cardForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Prevent the default form submission
+            // Retrieve and store the image data as a data URL
+            const imageInput = document.getElementById('imageInput');
+            const file = imageInput.files[0];
 
-            // Get form data
-            const cardData = {
-                landImage: previewImage.src, // Use the preview image as the source
-                size: document.getElementById("size").value,
-                price: document.getElementById("price").value,
-                ownerName: document.getElementById("ownerName").value,
-                locationDistrict: document.getElementById("locationDistrict").value,
-                locationAddress: document.getElementById("locationAddress").value,
-                soilType: document.getElementById("soilType").value,
-                contactNumber: document.getElementById("contactNumber").value,
-            };
-
-            // Retrieve existing data from localStorage
-            const existingData = JSON.parse(localStorage.getItem("cards")) || [];
-
-            // Add the new card data
-            existingData.push(cardData);
-
-            // Update localStorage with the new data
-            localStorage.setItem("cards", JSON.stringify(existingData));
-
-            // Redirect to the display_cards.html page
-            window.location.href = "display_cards.html";
-        });
-
-        landImageInput.addEventListener("change", function () {
-            const file = landImageInput.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function (e) {
-                    previewImage.src = e.target.result;
+                    const imageData = e.target.result;
+
+                    const landInfo = {
+                        image: imageData,
+                        size: document.getElementById('sizeInput').value,
+                        price: document.getElementById('priceInput').value,
+                        ownerName: document.getElementById('ownerNameInput').value,
+                        phoneNumber: document.getElementById('phoneNumberInput').value,
+                        address: document.getElementById('addressInput').value,
+                        landType: document.getElementById('landTypeInput').value,
+                        district: document.getElementById('districtInput').value
+                    };
+
+                    // Retrieve existing data from local storage and add the new entry
+                    const landData = JSON.parse(localStorage.getItem('landData')) || [];
+                    landData.push(landInfo);
+                    localStorage.setItem('landData', JSON.stringify(landData));
+                    alert('Land information added successfully.');
                 };
+
                 reader.readAsDataURL(file);
             }
         });
