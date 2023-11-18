@@ -1,0 +1,277 @@
+<!-- land-posts.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Land Details</title>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      position: relative;
+    }
+
+    li {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 400px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4285f4;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #3c78d8;
+    }
+
+
+
+    .postby{
+      font-size: 10px;
+      text-align: left;
+    }
+
+    .username{
+      margin-top: -10px;
+      text-align: left;
+    }
+
+    h3{
+      text-align: left;
+      color: #252525;
+    }
+
+    p{
+      text-align: left;
+    }
+
+  </style>
+   <script>
+    // Function to delete a specific item from local storage
+    function deleteLandInfo(index) {
+        const landData = JSON.parse(localStorage.getItem('landData')) || [];
+        landData.splice(index, 1); // Remove the item at the specified index
+        localStorage.setItem('landData', JSON.stringify(landData)); // Update local storage
+        displayLandInfo(); // Refresh the displayed cards
+    }
+
+    // Function to create a card for displaying land information
+    function createLandCard(landInfo, index) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        // Create an image element for displaying images
+        const img = document.createElement('img');
+        img.src = landInfo.image; // Set the image source to the data URL
+        img.alt = 'Land Image';
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
+
+        // Create a delete button for each card
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', function () {
+            deleteLandInfo(index); // Call the deleteLandInfo function to delete the card
+        });
+
+        // Create paragraphs for other land information
+        const size = document.createElement('p');
+        size.textContent = `Size: ${landInfo.size} acres`;
+
+        const price = document.createElement('p');
+        price.textContent = `Lease Price: ${landInfo.price}`;
+
+        const ownerName = document.createElement('p');
+        ownerName.textContent = `Owner Name: ${landInfo.ownerName}`;
+
+        const phoneNumber = document.createElement('p');
+        phoneNumber.textContent = `Phone Number: ${landInfo.phoneNumber}`;
+
+        const address = document.createElement('p');
+        address.textContent = `Address: ${landInfo.address}`;
+
+        const landType = document.createElement('p');
+        landType.textContent = `Land Type: ${landInfo.landType}`;
+
+        const landDistrict = document.createElement('p');
+        landDistrict.textContent = `District: ${landInfo.district}`;
+
+        card.appendChild(img);
+        card.appendChild(size);
+        card.appendChild(price);
+        card.appendChild(ownerName);
+        card.appendChild(phoneNumber);
+        card.appendChild(address);
+        card.appendChild(landType);
+        card.appendChild(landDistrict);
+        card.appendChild(deleteButton); // Append the delete button to the card
+
+        // Append the card to the card container
+        const landCards = document.getElementById('landCards');
+        landCards.appendChild(card);
+    }
+
+    // Retrieve and display land information based on filters
+    function displayLandInfo() {
+        const districtFilter = document.getElementById('districtFilter').value;
+        const landTypeFilter = document.getElementById('landTypeFilter').value;
+        const landCards = document.getElementById('landCards');
+        landCards.innerHTML = '';
+
+        // Retrieve data from local storage
+        const landData = JSON.parse(localStorage.getItem('landData')) || [];
+
+        // Filter and display land information cards
+        landData.forEach(function (landInfo, index) {
+            if ((districtFilter === 'all' || landInfo.district === districtFilter) &&
+                (landTypeFilter === 'all' || landInfo.landType === landTypeFilter)) {
+                createLandCard(landInfo, index);
+            }
+        });
+    }
+
+    // Populate the filter options with data from local storage
+    function populateFilterOptions() {
+        const districtFilter = document.getElementById('districtFilter');
+        const landTypeFilter = document.getElementById('landTypeFilter');
+
+        // Retrieve data from local storage
+        const landData = JSON.parse(localStorage.getItem('landData')) || [];
+        const districts = new Set();
+        const landTypes = new Set();
+
+        landData.forEach(function (landInfo) {
+            districts.add(landInfo.district);
+            landTypes.add(landInfo.landType);
+        });
+
+        // Add filter options
+        districtFilter.innerHTML = '<option value="all">All Districts of Tamil Nadu</option>';
+        landTypeFilter.innerHTML = '<option value="all">All Land Types</option>';
+
+        districts.forEach(function (district) {
+            districtFilter.innerHTML += `<option value="${district}">${district}</option>`;
+        });
+
+        landTypes.forEach(function (landType) {
+            landTypeFilter.innerHTML += `<option value="${landType}">${landType}</option>`;
+        });
+    }
+
+    // Initialize filter options and display land information
+    populateFilterOptions();
+    displayLandInfo();
+
+    // Add event listeners for filters
+    document.getElementById('districtFilter').addEventListener('change', displayLandInfo);
+    document.getElementById('landTypeFilter').addEventListener('change', displayLandInfo);
+    //localStorage.clear(); 
+   
+</script>
+
+
+
+
+</head>
+<body>
+  <h1>Land Details</h1>
+
+  <div class="ocontainer">
+    <div class="containerin1">
+<label for="districtFilter">Filter by District:</label>
+<select id="districtFilter">
+    <option value="all">All Districts of Tamil Nadu</option>
+    <option value="all">All Districts of Tamil Nadu</option>
+        <option value="Coimbatore">Coimbatore</option>
+        <option value="chennai">Chennai</option>
+        <option value="district2">Theni</option>
+        <option value="Thanjavur">Thanjavur</option>
+        <option value="Mailadudhurai">Mailadudhurai</option>
+    <!-- Add more districts as needed -->
+</select>
+</div>
+<div class="containerin1">
+<label for="landTypeFilter">Filter by Land Type:</label>
+<select id="landTypeFilter">
+    <!-- Populate with land types from local storage data -->
+</select>
+</div>
+</div>
+
+  <% if (allLandDetails.length === 0) { %>
+    <p>No land details available</p>
+  <% } else { %>
+    <ul>
+      <% allLandDetails.forEach(land => { %>
+        <li>
+          <h3 class="postby">Posted By</h3>
+          <% if (land.user && land.user.name) { %>
+            <p class="username"><%= land.user.name.toUpperCase() %></p>
+          <% } else { %>
+            <p>Unknown User</p>
+          <% } %>
+
+          <img src="/land/<%= land._id %>/image" alt="Land Image">
+    
+
+          <h3>Size (in acres):</h3>
+          <p><%= land.size %></p>
+
+          <h3>Lease Price:</h3>
+          <p><%= land.leasePrice %></p>
+
+          <h3>Owner Name:</h3>
+          <p><%= land.ownerName %></p>
+
+          <h3>Phone Number:</h3>
+          <p><%= land.phoneNumber %></p>
+
+          <h3>Address:</h3>
+          <p><%= land.address %></p>
+
+          <h3>Land Type:</h3>
+          <p><%= land.landType %></p>
+
+          <h3>District:</h3>
+          <p><%= land.district %></p>
+        </li>
+      <% }); %>
+    </ul>
+  <% } %>
+
+  <a href="/">Go to Home</a>
+</body>
+</html>
