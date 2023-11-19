@@ -2,7 +2,9 @@
 
 const mongoose = require('mongoose');
 
-const connect = mongoose.connect("mongodb://0.0.0.0/Datastore", { useNewUrlParser: true, useUnifiedTopology: true });
+const atlasConnection = "mongodb+srv://FutureFarmers:1234567890@futurefarmers.6vuaovd.mongodb.net/Datastore";
+
+const connect = mongoose.connect(atlasConnection, { useNewUrlParser: true, useUnifiedTopology: true });
 
 connect.then(() => {
   console.log("Database connected successfully");
