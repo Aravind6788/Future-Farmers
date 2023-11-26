@@ -279,14 +279,6 @@
                     <% }); %>                    
                   </ul>
                 <% } %>
-
-                <form action="/post/<%= post._id %>/comment" method="post">
-                  <div class="form-group">
-                    <label for="comment">Add Comment:</label>
-                    <input type="text" id="comment" name="comment" placeholder="Enter your comment" required>
-                  </div>
-                  <button type="submit" class="submit-btn">Comment</button>
-                </form>
           </li>
         <% }); %>
       </ul>

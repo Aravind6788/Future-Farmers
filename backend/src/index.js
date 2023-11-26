@@ -126,6 +126,16 @@ app.post('/post', async (req, res) => {
   }
 });
 
+app.get('/copy', async (req, res) => {
+  try {
+    const allPosts = await Post.find();
+    res.render('copy', { allPosts });
+  } catch (error) {
+    console.error('Retrieve posts error:', error);
+    res.status(500).send('Error during posts retrieval');
+  }
+});
+
 //post comments
 app.post('/post/:postId/comment', async (req, res) => {
   try {
