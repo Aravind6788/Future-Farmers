@@ -126,6 +126,32 @@ app.post('/post', async (req, res) => {
   }
 });
 
+//post comments
+app.post('/post/:postId/comment', async (req, res) => {
+  try {
+    const loggedInUser = req.session.username;
+    const postId = req.params.postId;
+
+    const commentData = {
+      user: loggedInUser,
+      comment: req.body.comment,
+    };
+
+    const updatedPost = await Post.findByIdAndUpdate(
+      postId,
+      { $push: { comments: commentData } },
+      { new: true }
+    );
+
+    res.redirect('/posts');
+  } catch (error) {
+    console.error('Comment data error:', error);
+    res.status(500).send('Error during comment posting');
+  }
+});
+
+//end post comments
+
 app.get('/posts', async (req, res) => {
   try {
     const allPosts = await Post.find();

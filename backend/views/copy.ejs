@@ -118,24 +118,6 @@
         <% allPosts.forEach(post => { %>
           <li data-user="<%= post.user %>">
             <strong class="username-style"><%= post.user.toUpperCase() %>:</strong> <span class="post-data-style"><%= post.data %></span>
-                <!-- Display comments -->
-                <% if (post.comments && post.comments.length > 0) { %>
-                  <ul>
-                    <% post.comments.forEach(comment => { %>
-                      <li>
-                        <strong><%= comment.user ? comment.user.toUpperCase() : 'Unknown User' %>:</strong> <%= comment.comment %>
-                      </li>
-                    <% }); %>                    
-                  </ul>
-                <% } %>
-
-                <form action="/post/<%= post._id %>/comment" method="post">
-                  <div class="form-group">
-                    <label for="comment">Add Comment:</label>
-                    <input type="text" id="comment" name="comment" placeholder="Enter your comment" required>
-                  </div>
-                  <button type="submit" class="submit-btn">Comment</button>
-                </form>
           </li>
         <% }); %>
       </ul>

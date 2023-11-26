@@ -32,6 +32,18 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  comments: [
+    {
+      user: {
+        type: String,
+        required: true,
+      },
+      comment: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
 });
 
 const LandSchema = new mongoose.Schema({
