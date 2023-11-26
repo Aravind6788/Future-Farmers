@@ -1,0 +1,57 @@
+ 
+     :root {
+        --agrion-font: 'DM Sans', sans-serif;
+        --agrion-font-two: 'Amatic SC', cursive;
+        --agrion-reey-font: "reeyregular";
+        --agrion-gray: #757873;
+        --agrion-gray-rgb: 117, 120, 115;
+        --agrion-white: #ffffff;
+        --agrion-white-rgb: 255, 255, 255;
+        --agrion-base: #1f6306;
+        --agrion-base-rgb: 31, 99, 6;
+        --agrion-black: #0e2207;
+        --agrion-black-rgb: 14, 34, 7;
+        --agrion-primary: #ffcd1e;
+        --agrion-primary-rgb: 255, 205, 30;
+        --agrion-extra: #f8f6f1;
+        --agrion-extra-rgb: 248, 246, 241;
+        --agrion-bdr-radius: 10px;
+      
+      }
+      
+      
+      
+     .containe1{
+        margin: 50px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: space-around;
+       
+      }
+      .containe1 ul{
+        list-style-type:none;
+      }
+      .answered{
+        background-color: #1f6306;
+        width: 40vw;
+        border-radius: 9px;
+      }
+      .post{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--agrion-base);
+        
+      }
+      .input {
+  margin: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  max-width: 40vwpx;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+}
