@@ -32,12 +32,13 @@
        width: 60%;
       }
       .containe1 ul{
-        width: 90%;
+        width: 99%;
+        margin-left: 0;
       }
       .containe1 ul li{
         list-style-type:none;
         background-color: white;
-        margin: 10px;
+        margin-block: 10px;
         color: black;
         
       }
@@ -57,7 +58,7 @@
   background: none;
   border: none;
   outline: none;
-  max-width: 40vwpx;
+  max-width: 40vw;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 9999px;
