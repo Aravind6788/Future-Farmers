@@ -26,11 +26,20 @@
         display: flex;
         flex-direction: row;
         gap: 10px;
-        justify-content: space-around;
-       
+       justify-content: center;
+       background-color: #1f6306;
+       color: white;
+       width: 60%;
       }
       .containe1 ul{
+        width: 90%;
+      }
+      .containe1 ul li{
         list-style-type:none;
+        background-color: white;
+        margin: 10px;
+        color: black;
+        
       }
       .answered{
         background-color: #1f6306;
