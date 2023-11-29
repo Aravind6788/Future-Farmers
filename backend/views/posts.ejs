@@ -46,7 +46,6 @@
     <!-- template styles -->
     <link rel="stylesheet" href="/css/agrion.css" />
     <link rel="stylesheet" href="/css/agrion-responsive.css" />
-    <link rel="stylesheet" href="/css/product.css">
     
 <script>
 
@@ -261,22 +260,36 @@
             </div>
         </section>
         <!--Page Header End-->
-  <div class="containe1">
+  <div class="cnt" >
+    <div class=" card">
     <% if (allPosts.length > 0) { %>
       <ul>
         <% allPosts.forEach(post => { %>
-          <li data-user="<%= post.user %>">
+            
+          <li  data-user="<%= post.user %>">
+            <div class="chat-header">
             <strong class="username-style"><%= post.user.toUpperCase() %>:</strong> <span class="post-data-style"><%= post.data %></span>
+            <button class="comments">Comments</button>
+            </div>
+           
+            <div class="chat-window">
                 <!-- Display comments -->
                 <% if (post.comments && post.comments.length > 0) { %>
                   <ul>
                     <% post.comments.forEach(comment => { %>
-                      <li>
+                      <li class="message-list" >
                         <strong><%= comment.user ? comment.user.toUpperCase() : 'Unknown User' %>:</strong> <%= comment.comment %>
                       </li>
-                    <% }); %>                    
+                    <% }); %>
+                                     
                   </ul>
                 <% } %>
+                
+            </div>
+            <div class="chat-input">
+                <input type="text" class="message-input" placeholder="Type your message here">
+                <button class="send-button">Send</button>
+            </div>   
           </li>
         <% }); %>
       </ul>
@@ -285,8 +298,9 @@
     <% } %>
 
     <!-- Add a link to return to the home page with the return-home class -->
-    
+</div>
   </div>
   <a href="/home" class="return-home">Return to Home</a>
+  
 </body>
 </html>
