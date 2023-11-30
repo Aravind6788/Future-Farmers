@@ -46,7 +46,7 @@
     <!-- template styles -->
     <link rel="stylesheet" href="/css/agrion.css" />
     <link rel="stylesheet" href="/css/agrion-responsive.css" />
-    
+    <script src="/js/posts1.js"></script>
 <script>
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -272,10 +272,11 @@
             <button class="comments">Comments</button>
             </div>
            
-            <div class="chat-window">
+            <div class="">
                 <!-- Display comments -->
                 <% if (post.comments && post.comments.length > 0) { %>
-                  <ul>
+                  <ul class="chat-window">
+                    
                     <% post.comments.forEach(comment => { %>
                       <li class="message-list" >
                         <strong><%= comment.user ? comment.user.toUpperCase() : 'Unknown User' %>:</strong> <%= comment.comment %>

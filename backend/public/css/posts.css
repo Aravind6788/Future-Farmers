@@ -26,9 +26,9 @@ top: 0;
 bottom: 0;
 right: 5%;
 }
-.comments:active +.chat-window{
+.chat-window1{
   overflow-y: scroll;
-  height: 75px;
+  height:150px;
 }
 .chat-window {
   overflow-y: hidden ;
