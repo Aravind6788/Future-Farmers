@@ -266,7 +266,7 @@
       <ul>
         <% allPosts.forEach(post => { %>
             
-          <li  data-user="<%= post.user %>">
+          <li  class="comment" data-user="<%= post.user %>">
             <div class="chat-header">
             <strong class="username-style"><%= post.user.toUpperCase() %>:</strong> <span class="post-data-style"><%= post.data %></span>
             <button class="comments">Comments</button>
